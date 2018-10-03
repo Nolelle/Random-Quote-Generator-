@@ -26,25 +26,27 @@ var quotes = [
   }
 ];
 
-
-// Create the getRandomQuuote function and name it getRandomQuote
+// Create the getRandomQuote function and name it getRandomQuote
 function getRandomQuote (array) {
   var random_num = Math.floor(Math.random() * array.length);  // Get a random number between 0-array.length, since array starts at index 0.
   var random_quote = array[random_num];
-  return random_quote.quote
+  return random_quote
 }
 // Test code
-//var test = getRandomQuote(quotes);
-//console.log(test);
-
-// Create the getRandomQuuote function and name it getRandomQuote
-
-
+// getRandomQuote(quotes);
+// console.log(random_quote);
 
 // Create the printQuote funtion and name it printQuote
-
-
-
+function printQuote (array) {
+var random_quote = getRandomQuote(array);
+if (random_quote.citation || random_quote.year) {  // conditional statements for if the quote has citation and year properties.
+document.getElementById('quote-box').innerHTML = "<p class="quote"> " + random_quote.quote + "</p>" +
+"<p class="source"> " + random_quote.source + "<span class="citation"> " + random_quote.citation + " </span> <span class="year">" + random_quote.year + "</span>  </p>";
+}
+else {
+  document.getElementById('quote-box').innerHTML = "<p class="quote"> " + random_quote.quote + "</p> <p class="source"> " + random_quote.source + "</p>";
+}
+}
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
