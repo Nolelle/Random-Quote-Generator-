@@ -48,7 +48,7 @@ document.getElementById('quote-box').innerHTML = '<p class="quote"> ' + quote.qu
 else {
   document.getElementById('quote-box').innerHTML = '<p class="quote"> ' + quote.quote + '</p> <p class="source"> ' + quote.source + '<span class= "citation" > Tags: ' + quote.tags + '</span> </p>';
 }
-
+// console.log(random_quote);
 return quote;
 }
 // Function to  randomly change the background color.
@@ -59,13 +59,12 @@ var b = Math.floor(Math.random() * 256);
 // console.log(r);
 // console.log(g);
 // console.log(b);
-var random_color = "rgb(" + r + "," + g + "," + b + ")"
-document.body.style.backgroundColor = random_color;  // changes the element body's background color.
+document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";  // changes the element body's background color.
 }
 
 //Will repeatedly call the two functions after 30 secounds has passed.
-setInterval(printQuote,30000);
-setInterval(changeColour,30000);
+setInterval(printQuote,2000);
+setInterval(changeColour,2000);
 
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
