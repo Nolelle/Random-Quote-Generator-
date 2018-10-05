@@ -63,8 +63,8 @@ document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";  // 
 }
 
 //Will repeatedly call the two functions after 30 secounds has passed.
-setInterval(printQuote,2000);
-setInterval(changeColour,2000);
+setInterval(printQuote,30000);
+setInterval(changeColour,30000);
 
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
